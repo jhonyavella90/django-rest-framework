@@ -10,7 +10,7 @@ from django.middleware.csrf import CsrfViewMiddleware
 from django.utils.translation import ugettext_lazy as _
 
 from rest_framework_tm import HTTP_HEADER_ENCODING, exceptions
-from rest_framework_tm.authtoken.models import Token
+from rest_framework.authtoken.models import Token
 
 
 def get_authorization_header(request):
