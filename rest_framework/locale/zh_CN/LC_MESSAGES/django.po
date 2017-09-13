@@ -345,15 +345,15 @@ msgstr "无效值。"
 msgid "Invalid data. Expected a dictionary, but got {datatype}."
 msgstr "无效数据。期待为字典类型，得到的是 {datatype} 。"
 
-#: templates/rest_framework/horizontal/radio.html:2
-#: templates/rest_framework/inline/radio.html:2
-#: templates/rest_framework/vertical/radio.html:2
+#: templates/rest_framework_tm/horizontal/radio.html:2
+#: templates/rest_framework_tm/inline/radio.html:2
+#: templates/rest_framework_tm/vertical/radio.html:2
 msgid "None"
 msgstr "无"
 
-#: templates/rest_framework/horizontal/select_multiple.html:2
-#: templates/rest_framework/inline/select_multiple.html:2
-#: templates/rest_framework/vertical/select_multiple.html:2
+#: templates/rest_framework_tm/horizontal/select_multiple.html:2
+#: templates/rest_framework_tm/inline/select_multiple.html:2
+#: templates/rest_framework_tm/vertical/select_multiple.html:2
 msgid "No items to select."
 msgstr "没有可选项。"
 

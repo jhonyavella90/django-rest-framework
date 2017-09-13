@@ -9,7 +9,7 @@ from django.utils.encoding import force_text
 from django.utils.html import escape
 from django.utils.safestring import mark_safe
 
-from rest_framework.compat import apply_markdown
+from rest_framework_tm.compat import apply_markdown
 
 
 def remove_trailing_string(content, trailing):

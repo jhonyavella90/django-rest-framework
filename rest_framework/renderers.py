@@ -19,16 +19,16 @@ from django.template import Context, RequestContext, Template, loader
 from django.test.client import encode_multipart
 from django.utils import six
 
-from rest_framework import VERSION, exceptions, serializers, status
-from rest_framework.compat import (
+from rest_framework_tm import VERSION, exceptions, serializers, status
+from rest_framework_tm.compat import (
     INDENT_SEPARATORS, LONG_SEPARATORS, SHORT_SEPARATORS
 )
-from rest_framework.exceptions import ParseError
-from rest_framework.request import is_form_media_type, override_method
-from rest_framework.settings import api_settings
-from rest_framework.utils import encoders
-from rest_framework.utils.breadcrumbs import get_breadcrumbs
-from rest_framework.utils.field_mapping import ClassLookupDict
+from rest_framework_tm.exceptions import ParseError
+from rest_framework_tm.request import is_form_media_type, override_method
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.utils import encoders
+from rest_framework_tm.utils.breadcrumbs import get_breadcrumbs
+from rest_framework_tm.utils.field_mapping import ClassLookupDict
 
 
 def zero_as_none(value):
@@ -249,7 +249,7 @@ class HTMLFormRenderer(BaseRenderer):
     media_type = 'text/html'
     format = 'form'
     charset = 'utf-8'
-    template_pack = 'rest_framework/horizontal/'
+    template_pack = 'rest_framework_tm/horizontal/'
     base_template = 'form.html'
 
     default_style = ClassLookupDict({
@@ -373,7 +373,7 @@ class BrowsableAPIRenderer(BaseRenderer):
     """
     media_type = 'text/html'
     format = 'api'
-    template = 'rest_framework/api.html'
+    template = 'rest_framework_tm/api.html'
     charset = 'utf-8'
     form_renderer_class = HTMLFormRenderer
 
@@ -510,7 +510,7 @@ class BrowsableAPIRenderer(BaseRenderer):
                 self.accepted_media_type,
                 dict(
                     list(self.renderer_context.items()) +
-                    [('template', 'rest_framework/api_form.html')]
+                    [('template', 'rest_framework_tm/api_form.html')]
                 )
             )
 
@@ -681,7 +681,7 @@ class BrowsableAPIRenderer(BaseRenderer):
 
 
 class AdminRenderer(BrowsableAPIRenderer):
-    template = 'rest_framework/admin.html'
+    template = 'rest_framework_tm/admin.html'
     format = 'admin'
 
     def render(self, data, accepted_media_type=None, renderer_context=None):

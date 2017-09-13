@@ -7,8 +7,8 @@ from django.db.models.query import QuerySet
 from django.http import Http404
 from django.shortcuts import get_object_or_404 as _get_object_or_404
 
-from rest_framework import mixins, views
-from rest_framework.settings import api_settings
+from rest_framework_tm import mixins, views
+from rest_framework_tm.settings import api_settings
 
 
 def get_object_or_404(queryset, *filter_args, **filter_kwargs):

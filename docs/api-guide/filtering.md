@@ -22,7 +22,7 @@ For example:
 
     from myapp.models import Purchase
     from myapp.serializers import PurchaseSerializer
-    from rest_framework import generics
+    from rest_framework_tm import generics
 
     class PurchaseList(generics.ListAPIView):
         serializer_class = PurchaseSerializer
@@ -87,8 +87,8 @@ As well as being able to override the default queryset, REST framework also incl
 
 The default filter backends may be set globally, using the `DEFAULT_FILTER_BACKENDS` setting.  For example.
 
-    REST_FRAMEWORK = {
-        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',)
+    REST_FRAMEWORK_TM = {
+        'DEFAULT_FILTER_BACKENDS': ('rest_framework_tm.filters.DjangoFilterBackend',)
     }
 
 You can also set the filter backends on a per-view, or per-viewset basis,
@@ -96,8 +96,8 @@ using the `GenericAPIView` class based views.
 
     from django.contrib.auth.models import User
 	from myapp.serializers import UserSerializer
-    from rest_framework import filters
-	from rest_framework import generics
+    from rest_framework_tm import filters
+	from rest_framework_tm import generics
 
     class UserListView(generics.ListAPIView):
         queryset = User.objects.all()
@@ -163,8 +163,8 @@ For more advanced filtering requirements you can specify a `FilterSet` class tha
     import django_filters
     from myapp.models import Product
     from myapp.serializers import ProductSerializer
-    from rest_framework import filters
-    from rest_framework import generics
+    from rest_framework_tm import filters
+    from rest_framework_tm import generics
 
     class ProductFilter(django_filters.FilterSet):
         min_price = django_filters.NumberFilter(name="price", lookup_type='gte')
@@ -191,7 +191,7 @@ filters using `Manufacturer` name. For example:
     import django_filters
     from myapp.models import Product
     from myapp.serializers import ProductSerializer
-    from rest_framework import generics
+    from rest_framework_tm import generics
 
     class ProductFilter(django_filters.FilterSet):
         class Meta:
@@ -207,7 +207,7 @@ This is nice, but it exposes the Django's double underscore convention as part o
     import django_filters
     from myapp.models import Product
     from myapp.serializers import ProductSerializer
-    from rest_framework import generics
+    from rest_framework_tm import generics
 
     class ProductFilter(django_filters.FilterSet):
         manufacturer = django_filters.CharFilter(name="manufacturer__name")

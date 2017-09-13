@@ -13,8 +13,8 @@ from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ungettext
 
-from rest_framework import status
-from rest_framework.utils.serializer_helpers import ReturnDict, ReturnList
+from rest_framework_tm import status
+from rest_framework_tm.utils.serializer_helpers import ReturnDict, ReturnList
 
 
 def _force_text_recursive(data):
@@ -62,7 +62,7 @@ class APIException(Exception):
 # under `serializers`, in order to minimize potential confusion with Django's
 # built in `ValidationError`. For example:
 #
-# from rest_framework import serializers
+# from rest_framework_tm import serializers
 # raise serializers.ValidationError('Value was invalid')
 
 class ValidationError(APIException):

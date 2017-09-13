@@ -45,8 +45,8 @@ Here's an example response that demonstrates the information that is returned by
 
 You can set the metadata class globally using the `'DEFAULT_METADATA_CLASS'` settings key:
 
-    REST_FRAMEWORK = {
-        'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata'
+    REST_FRAMEWORK_TM = {
+        'DEFAULT_METADATA_CLASS': 'rest_framework_tm.metadata.SimpleMetadata'
     }
 
 Or you can set the metadata class individually for a view:
@@ -100,7 +100,7 @@ The following class could be used to limit the information that is returned to `
 
 Then configure your settings to use this custom class:
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_METADATA_CLASS': 'myproject.apps.core.MinimalMetadata'
     }
 

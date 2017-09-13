@@ -18,8 +18,8 @@ from django.http.multipartparser import parse_header
 from django.utils import six
 from django.utils.datastructures import MultiValueDict
 
-from rest_framework import HTTP_HEADER_ENCODING, exceptions
-from rest_framework.settings import api_settings
+from rest_framework_tm import HTTP_HEADER_ENCODING, exceptions
+from rest_framework_tm.settings import api_settings
 
 
 def is_form_media_type(media_type):

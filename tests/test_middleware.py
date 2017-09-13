@@ -2,10 +2,10 @@
 from django.conf.urls import url
 from django.contrib.auth.models import User
 
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.authtoken.models import Token
-from rest_framework.test import APITestCase
-from rest_framework.views import APIView
+from rest_framework_tm.authentication import TokenAuthentication
+from rest_framework_tm.authtoken.models import Token
+from rest_framework_tm.test import APITestCase
+from rest_framework_tm.views import APIView
 
 urlpatterns = [
     url(r'^$', APIView.as_view(authentication_classes=(TokenAuthentication,))),

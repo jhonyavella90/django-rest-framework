@@ -12,12 +12,12 @@ from django.utils.encoding import smart_text
 from django.utils.six.moves.urllib import parse as urlparse
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework.compat import OrderedDict
-from rest_framework.fields import (
+from rest_framework_tm.compat import OrderedDict
+from rest_framework_tm.fields import (
     Field, empty, get_attribute, is_simple_callable, iter_options
 )
-from rest_framework.reverse import reverse
-from rest_framework.utils import html
+from rest_framework_tm.reverse import reverse
+from rest_framework_tm.utils import html
 
 
 class Hyperlink(six.text_type):

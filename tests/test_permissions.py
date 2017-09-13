@@ -8,14 +8,14 @@ from django.db import models
 from django.test import TestCase
 from django.utils import unittest
 
-from rest_framework import (
+from rest_framework_tm import (
     HTTP_HEADER_ENCODING, authentication, generics, permissions, serializers,
     status
 )
-from rest_framework.compat import get_model_name, guardian
-from rest_framework.filters import DjangoObjectPermissionsFilter
-from rest_framework.routers import DefaultRouter
-from rest_framework.test import APIRequestFactory
+from rest_framework_tm.compat import get_model_name, guardian
+from rest_framework_tm.filters import DjangoObjectPermissionsFilter
+from rest_framework_tm.routers import DefaultRouter
+from rest_framework_tm.test import APIRequestFactory
 from tests.models import BasicModel
 
 factory = APIRequestFactory()

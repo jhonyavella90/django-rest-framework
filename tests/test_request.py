@@ -16,16 +16,16 @@ from django.core.handlers.wsgi import WSGIRequest
 from django.test import TestCase
 from django.utils import six
 
-from rest_framework import status
-from rest_framework.authentication import SessionAuthentication
-from rest_framework.parsers import (
+from rest_framework_tm import status
+from rest_framework_tm.authentication import SessionAuthentication
+from rest_framework_tm.parsers import (
     BaseParser, FormParser, JSONParser, MultiPartParser
 )
-from rest_framework.request import Empty, Request
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.test import APIClient, APIRequestFactory
-from rest_framework.views import APIView
+from rest_framework_tm.request import Empty, Request
+from rest_framework_tm.response import Response
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.test import APIClient, APIRequestFactory
+from rest_framework_tm.views import APIView
 
 factory = APIRequestFactory()
 
@@ -256,8 +256,8 @@ class TestUserSetter(TestCase):
         """
         class AuthRaisesAttributeError(object):
             def authenticate(self, request):
-                import rest_framework
-                rest_framework.MISSPELLED_NAME_THAT_DOESNT_EXIST
+                import rest_framework_tm
+                rest_framework_tm.MISSPELLED_NAME_THAT_DOESNT_EXIST
 
         self.request = Request(factory.get('/'), authenticators=(AuthRaisesAttributeError(),))
         SessionMiddleware().process_request(self.request)

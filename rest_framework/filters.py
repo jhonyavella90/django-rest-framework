@@ -11,10 +11,10 @@ from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.utils import six
 
-from rest_framework.compat import (
+from rest_framework_tm.compat import (
     distinct, django_filters, get_model_name, guardian
 )
-from rest_framework.settings import api_settings
+from rest_framework_tm.settings import api_settings
 
 FilterSet = django_filters and django_filters.FilterSet or None
 

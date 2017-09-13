@@ -6,9 +6,9 @@ from __future__ import unicode_literals
 
 from django.http import Http404
 
-from rest_framework import HTTP_HEADER_ENCODING, exceptions
-from rest_framework.settings import api_settings
-from rest_framework.utils.mediatypes import (
+from rest_framework_tm import HTTP_HEADER_ENCODING, exceptions
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.utils.mediatypes import (
     _MediaType, media_type_matches, order_by_precedence
 )
 

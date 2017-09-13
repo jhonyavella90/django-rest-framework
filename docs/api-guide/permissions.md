@@ -58,24 +58,24 @@ Often when you're using object level permissions you'll also want to [filter the
 
 The default permission policy may be set globally, using the `DEFAULT_PERMISSION_CLASSES` setting.  For example.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PERMISSION_CLASSES': (
-            'rest_framework.permissions.IsAuthenticated',
+            'rest_framework_tm.permissions.IsAuthenticated',
         )
     }
 
 If not specified, this setting defaults to allowing unrestricted access:
 
     'DEFAULT_PERMISSION_CLASSES': (
-       'rest_framework.permissions.AllowAny',
+       'rest_framework_tm.permissions.AllowAny',
     )
 
 You can also set the authentication policy on a per-view, or per-viewset basis,
 using the `APIView` class based views.
 
-    from rest_framework.permissions import IsAuthenticated
-    from rest_framework.response import Response
-    from rest_framework.views import APIView
+    from rest_framework_tm.permissions import IsAuthenticated
+    from rest_framework_tm.response import Response
+    from rest_framework_tm.views import APIView
 
     class ExampleView(APIView):
         permission_classes = (IsAuthenticated,)
@@ -88,9 +88,9 @@ using the `APIView` class based views.
 
 Or, if you're using the `@api_view` decorator with function based views.
 
-    from rest_framework.decorators import api_view, permission_classes
-    from rest_framework.permissions import IsAuthenticated
-    from rest_framework.response import Response
+    from rest_framework_tm.decorators import api_view, permission_classes
+    from rest_framework_tm.permissions import IsAuthenticated
+    from rest_framework_tm.response import Response
 
     @api_view('GET')
     @permission_classes((IsAuthenticated, ))
@@ -196,7 +196,7 @@ If you need to test if a request is a read operation or a write operation, you s
 
 Custom permissions will raise a `PermissionDenied` exception if the test fails. To change the error message associated with the exception, implement a `message` attribute directly on your custom permission. Otherwise the `default_detail` attribute from `PermissionDenied` will be used.
     
-    from rest_framework import permissions
+    from rest_framework_tm import permissions
 
     class CustomerAccessPermission(permissions.BasePermission):
         message = 'Adding customers not allowed.'
@@ -208,7 +208,7 @@ Custom permissions will raise a `PermissionDenied` exception if the test fails. 
 
 The following is an example of a permission class that checks the incoming request's IP address against a blacklist, and denies the request if the IP has been blacklisted.
 
-    from rest_framework import permissions
+    from rest_framework_tm import permissions
 
     class BlacklistPermission(permissions.BasePermission):
         """

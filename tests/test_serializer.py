@@ -5,8 +5,8 @@ import pickle
 
 import pytest
 
-from rest_framework import serializers
-from rest_framework.compat import unicode_repr
+from rest_framework_tm import serializers
+from rest_framework_tm.compat import unicode_repr
 
 from .utils import MockObject
 

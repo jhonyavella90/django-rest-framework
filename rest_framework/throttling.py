@@ -8,7 +8,7 @@ import time
 from django.core.cache import cache as default_cache
 from django.core.exceptions import ImproperlyConfigured
 
-from rest_framework.settings import api_settings
+from rest_framework_tm.settings import api_settings
 
 
 class BaseThrottle(object):

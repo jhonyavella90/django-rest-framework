@@ -6,8 +6,8 @@ from django.core.validators import MaxValueValidator, RegexValidator
 from django.db import models
 from django.test import TestCase
 
-from rest_framework import generics, serializers, status
-from rest_framework.test import APIRequestFactory
+from rest_framework_tm import generics, serializers, status
+from rest_framework_tm.test import APIRequestFactory
 
 factory = APIRequestFactory()
 

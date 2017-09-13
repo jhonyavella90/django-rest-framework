@@ -5,12 +5,12 @@ import sys
 
 from django.test import TestCase
 
-from rest_framework import status
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.test import APIRequestFactory
-from rest_framework.views import APIView
+from rest_framework_tm import status
+from rest_framework_tm.decorators import api_view
+from rest_framework_tm.response import Response
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.test import APIRequestFactory
+from rest_framework_tm.views import APIView
 
 factory = APIRequestFactory()
 

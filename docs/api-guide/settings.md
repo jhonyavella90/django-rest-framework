@@ -6,16 +6,16 @@ source: settings.py
 >
 > &mdash; [The Zen of Python][cite]
 
-Configuration for REST framework is all namespaced inside a single Django setting, named `REST_FRAMEWORK`.
+Configuration for REST framework is all namespaced inside a single Django setting, named `REST_FRAMEWORK_TM`.
 
 For example your project's `settings.py` file might include something like this:
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework.renderers.JSONRenderer',
+            'rest_framework_tm.renderers.JSONRenderer',
         ),
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework.parsers.JSONParser',
+            'rest_framework_tm.parsers.JSONParser',
         )
     }
 
@@ -24,7 +24,7 @@ For example your project's `settings.py` file might include something like this:
 If you need to access the values of REST framework's API settings in your project,
 you should use the `api_settings` object.  For example.
 
-    from rest_framework.settings import api_settings
+    from rest_framework_tm.settings import api_settings
 
     print api_settings.DEFAULT_AUTHENTICATION_CLASSES
 
@@ -45,8 +45,8 @@ A list or tuple of renderer classes, that determines the default set of renderer
 Default:
 
     (
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_tm.renderers.JSONRenderer',
+        'rest_framework_tm.renderers.BrowsableAPIRenderer',
     )
 
 #### DEFAULT_PARSER_CLASSES
@@ -56,9 +56,9 @@ A list or tuple of parser classes, that determines the default set of parsers us
 Default:
 
     (
-        'rest_framework.parsers.JSONParser',
-        'rest_framework.parsers.FormParser',
-        'rest_framework.parsers.MultiPartParser'
+        'rest_framework_tm.parsers.JSONParser',
+        'rest_framework_tm.parsers.FormParser',
+        'rest_framework_tm.parsers.MultiPartParser'
     )
 
 #### DEFAULT_AUTHENTICATION_CLASSES
@@ -68,8 +68,8 @@ A list or tuple of authentication classes, that determines the default set of au
 Default:
 
     (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        'rest_framework_tm.authentication.SessionAuthentication',
+        'rest_framework_tm.authentication.BasicAuthentication'
     )
 
 #### DEFAULT_PERMISSION_CLASSES
@@ -79,7 +79,7 @@ A list or tuple of permission classes, that determines the default set of permis
 Default:
 
     (
-        'rest_framework.permissions.AllowAny',
+        'rest_framework_tm.permissions.AllowAny',
     )
 
 #### DEFAULT_THROTTLE_CLASSES
@@ -92,7 +92,7 @@ Default: `()`
 
 A content negotiation class, that determines how a renderer is selected for the response, given an incoming request.
 
-Default: `'rest_framework.negotiation.DefaultContentNegotiation'`
+Default: `'rest_framework_tm.negotiation.DefaultContentNegotiation'`
 
 ---
 
@@ -104,7 +104,7 @@ Default: `'rest_framework.negotiation.DefaultContentNegotiation'`
 
 A class the determines the default serialization style for paginated responses.
 
-Default: `rest_framework.pagination.PaginationSerializer`
+Default: `rest_framework_tm.pagination.PaginationSerializer`
 
 #### DEFAULT_FILTER_BACKENDS
 
@@ -131,7 +131,7 @@ The name of a query parameter, which can be used by the client to override the d
 
 For example, given the following settings:
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
     	'PAGINATE_BY': 10,
     	'PAGINATE_BY_PARAM': 'page_size',
     }
@@ -156,7 +156,7 @@ The maximum page size to allow when the page size is specified by the client.  I
 
 For example, given the following settings:
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
     	'PAGINATE_BY': 10,
     	'PAGINATE_BY_PARAM': 'page_size',
         'MAX_PAGINATE_BY': 100
@@ -243,8 +243,8 @@ The format of any of these renderer classes may be used when constructing a test
 Default:
 
     (
-        'rest_framework.renderers.MultiPartRenderer',
-        'rest_framework.renderers.JSONRenderer'
+        'rest_framework_tm.renderers.MultiPartRenderer',
+        'rest_framework_tm.renderers.JSONRenderer'
     )
 
 ---
@@ -404,7 +404,7 @@ This should be a function with the following signature:
 * `cls`: The view class.  Typically the name function would inspect the name of the class when generating a descriptive name, by accessing `cls.__name__`.
 * `suffix`: The optional suffix used when differentiating individual views in a viewset.
 
-Default: `'rest_framework.views.get_view_name'`
+Default: `'rest_framework_tm.views.get_view_name'`
 
 #### VIEW_DESCRIPTION_FUNCTION
 
@@ -419,7 +419,7 @@ This should be a function with the following signature:
 * `cls`: The view class.  Typically the description function would inspect the docstring of the class when generating a description, by accessing `cls.__doc__`
 * `html`: A boolean indicating if HTML output is required.  `True` when used in the browsable API, and `False` when used in generating `OPTIONS` responses.
 
-Default: `'rest_framework.views.get_view_description'`
+Default: `'rest_framework_tm.views.get_view_description'`
 
 ---
 
@@ -437,7 +437,7 @@ This should be a function with the following signature:
 
 * `exc`: The exception.
 
-Default: `'rest_framework.views.exception_handler'`
+Default: `'rest_framework_tm.views.exception_handler'`
 
 #### NON_FIELD_ERRORS_KEY
 

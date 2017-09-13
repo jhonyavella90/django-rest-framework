@@ -8,10 +8,10 @@ from django.template import Template, TemplateDoesNotExist
 from django.test import TestCase
 from django.utils import six
 
-from rest_framework import status
-from rest_framework.decorators import api_view, renderer_classes
-from rest_framework.renderers import TemplateHTMLRenderer
-from rest_framework.response import Response
+from rest_framework_tm import status
+from rest_framework_tm.decorators import api_view, renderer_classes
+from rest_framework_tm.renderers import TemplateHTMLRenderer
+from rest_framework_tm.response import Response
 
 
 @api_view(('GET',))

@@ -4,9 +4,9 @@ from django.conf.urls import url
 from django.test import TestCase
 from django.test.utils import override_settings
 
-from rest_framework import serializers
-from rest_framework.generics import ListCreateAPIView
-from rest_framework.renderers import BrowsableAPIRenderer
+from rest_framework_tm import serializers
+from rest_framework_tm.generics import ListCreateAPIView
+from rest_framework_tm.renderers import BrowsableAPIRenderer
 
 
 class NestedSerializer(serializers.Serializer):

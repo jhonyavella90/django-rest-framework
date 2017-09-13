@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load rest_framework %}
+{% load rest_framework_tm %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,12 +14,12 @@
 
     {% block style %}
       {% block bootstrap_theme %}
-        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap.min.css" %}"/>
-        <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap-tweaks.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/bootstrap.min.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/bootstrap-tweaks.css" %}"/>
       {% endblock %}
 
-      <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/prettify.css" %}"/>
-      <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/default.css" %}"/>
+      <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/prettify.css" %}"/>
+      <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/default.css" %}"/>
     {% endblock %}
 
   {% endblock %}
@@ -172,7 +172,7 @@
                     {% with form=raw_data_post_form %}
                       <form action="{{ request.get_full_path }}" method="POST" class="form-horizontal">
                         <fieldset>
-                          {% include "rest_framework/raw_data_form.html" %}
+                          {% include "rest_framework_tm/raw_data_form.html" %}
                           <div class="form-actions">
                             <button class="btn btn-primary" title="Make a POST request on the {{ name }} resource">POST</button>
                           </div>
@@ -215,7 +215,7 @@
                     {% with form=raw_data_put_or_patch_form %}
                       <form action="{{ request.get_full_path }}" method="POST" class="form-horizontal">
                         <fieldset>
-                          {% include "rest_framework/raw_data_form.html" %}
+                          {% include "rest_framework_tm/raw_data_form.html" %}
                           <div class="form-actions">
                             {% if raw_data_put_form %}
                               <button class="btn btn-primary js-tooltip" name="{{ api_settings.FORM_METHOD_OVERRIDE }}" value="PUT" title="Make a PUT request on the {{ name }} resource">PUT</button>
@@ -237,10 +237,10 @@
   </div><!-- ./wrapper -->
 
   {% block script %}
-    <script src="{% static "rest_framework/js/jquery-1.8.1-min.js" %}"></script>
-    <script src="{% static "rest_framework/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "rest_framework/js/prettify-min.js" %}"></script>
-    <script src="{% static "rest_framework/js/default.js" %}"></script>
+    <script src="{% static "rest_framework_tm/js/jquery-1.8.1-min.js" %}"></script>
+    <script src="{% static "rest_framework_tm/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "rest_framework_tm/js/prettify-min.js" %}"></script>
+    <script src="{% static "rest_framework_tm/js/default.js" %}"></script>
   {% endblock %}
 </body>
 {% endblock %}

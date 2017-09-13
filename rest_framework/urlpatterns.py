@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.conf.urls import include, url
 from django.core.urlresolvers import RegexURLResolver
 
-from rest_framework.settings import api_settings
+from rest_framework_tm.settings import api_settings
 
 
 def apply_suffix_patterns(urlpatterns, suffix_pattern, suffix_required):

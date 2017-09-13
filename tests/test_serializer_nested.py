@@ -1,6 +1,6 @@
 from django.http import QueryDict
 
-from rest_framework import serializers
+from rest_framework_tm import serializers
 
 
 class TestNestedSerializer:

@@ -12,7 +12,7 @@ import types
 
 from django.utils import six
 
-from rest_framework.views import APIView
+from rest_framework_tm.views import APIView
 
 
 def api_view(http_method_names=None):

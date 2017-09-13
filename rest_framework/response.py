@@ -10,7 +10,7 @@ from django.template.response import SimpleTemplateResponse
 from django.utils import six
 from django.utils.six.moves.http_client import responses
 
-from rest_framework.serializers import Serializer
+from rest_framework_tm.serializers import Serializer
 
 
 class Response(SimpleTemplateResponse):

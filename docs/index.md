@@ -73,21 +73,21 @@ Install using `pip`, including any optional packages you want...
 
     git clone git@github.com:tomchristie/django-rest-framework.git
 
-Add `'rest_framework'` to your `INSTALLED_APPS` setting.
+Add `'rest_framework_tm'` to your `INSTALLED_APPS` setting.
 
     INSTALLED_APPS = (
         ...
-        'rest_framework',
+        'rest_framework_tm',
     )
 
 If you're intending to use the browsable API you'll probably also want to add REST framework's login and logout views.  Add the following to your root `urls.py` file.
 
     urlpatterns = [
         ...
-        url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+        url(r'^api-auth/', include('rest_framework_tm.urls', namespace='rest_framework_tm'))
     ]
 
-Note that the URL path can be whatever you want, but you must include `'rest_framework.urls'` with the `'rest_framework'` namespace.
+Note that the URL path can be whatever you want, but you must include `'rest_framework_tm.urls'` with the `'rest_framework_tm'` namespace.
 
 ## Example
 
@@ -95,24 +95,24 @@ Let's take a look at a quick example of using REST framework to build a simple m
 
 We'll create a read-write API for accessing information on the users of our project.
 
-Any global settings for a REST framework API are kept in a single configuration dictionary named `REST_FRAMEWORK`.  Start off by adding the following to your `settings.py` module:
+Any global settings for a REST framework API are kept in a single configuration dictionary named `REST_FRAMEWORK_TM`.  Start off by adding the following to your `settings.py` module:
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         # Use Django's standard `django.contrib.auth` permissions,
         # or allow read-only access for unauthenticated users.
         'DEFAULT_PERMISSION_CLASSES': [
-            'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+            'rest_framework_tm.permissions.DjangoModelPermissionsOrAnonReadOnly'
         ]
     }
 
-Don't forget to make sure you've also added `rest_framework` to your `INSTALLED_APPS`.
+Don't forget to make sure you've also added `rest_framework_tm` to your `INSTALLED_APPS`.
 
 We're ready to create our API now.
 Here's our project's root `urls.py` module:
 
     from django.conf.urls import url, include
     from django.contrib.auth.models import User
-    from rest_framework import routers, serializers, viewsets
+    from rest_framework_tm import routers, serializers, viewsets
 
 	# Serializers define the API representation.
 	class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -133,7 +133,7 @@ Here's our project's root `urls.py` module:
     # Additionally, we include login URLs for the browsable API.
     urlpatterns = [
         url(r'^', include(router.urls)),
-        url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+        url(r'^api-auth/', include('rest_framework_tm.urls', namespace='rest_framework_tm'))
     ]
 
 You can now open the API in your browser at [http://127.0.0.1:8000/](http://127.0.0.1:8000/), and view your new 'users' API. If you use the login control in the top right corner you'll also be able to add, create and delete users from the system.

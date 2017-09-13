@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 from django.http.multipartparser import parse_header
 from django.utils.encoding import python_2_unicode_compatible
 
-from rest_framework import HTTP_HEADER_ENCODING
+from rest_framework_tm import HTTP_HEADER_ENCODING
 
 
 def media_type_matches(lhs, rhs):

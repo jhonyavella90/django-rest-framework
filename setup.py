@@ -41,7 +41,7 @@ def get_package_data(package):
     return {package: filepaths}
 
 
-version = get_version('rest_framework')
+version = get_version('rest_framework_tm')
 
 
 if sys.argv[-1] == 'publish':
@@ -58,20 +58,20 @@ if sys.argv[-1] == 'publish':
     print("  git push --tags")
     shutil.rmtree('dist')
     shutil.rmtree('build')
-    shutil.rmtree('djangorestframework.egg-info')
+    shutil.rmtree('djangorestframework-tm.egg-info')
     sys.exit()
 
 
 setup(
-    name='djangorestframework',
+    name='djangorestframework-tm',
     version=version,
     url='http://www.django-rest-framework.org',
     license='BSD',
     description='Web APIs for Django, made easy.',
     author='Tom Christie',
     author_email='tom@tomchristie.com',  # SEE NOTE BELOW (*)
-    packages=get_packages('rest_framework'),
-    package_data=get_package_data('rest_framework'),
+    packages=get_packages('rest_framework_tm'),
+    package_data=get_package_data('rest_framework_tm'),
     install_requires=[],
     zip_safe=False,
     classifiers=[

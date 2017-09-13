@@ -1,7 +1,7 @@
 """
 Helper functions that convert strftime formats into more readable representations.
 """
-from rest_framework import ISO_8601
+from rest_framework_tm import ISO_8601
 
 
 def datetime_formats(formats):

@@ -344,15 +344,15 @@ msgstr "Ugyldig værdi."
 msgid "Invalid data. Expected a dictionary, but got {datatype}."
 msgstr "Ugyldig data. Forventede en dictionary, men fik {datatype}."
 
-#: templates/rest_framework/horizontal/radio.html:2
-#: templates/rest_framework/inline/radio.html:2
-#: templates/rest_framework/vertical/radio.html:2
+#: templates/rest_framework_tm/horizontal/radio.html:2
+#: templates/rest_framework_tm/inline/radio.html:2
+#: templates/rest_framework_tm/vertical/radio.html:2
 msgid "None"
 msgstr "Ingen"
 
-#: templates/rest_framework/horizontal/select_multiple.html:2
-#: templates/rest_framework/inline/select_multiple.html:2
-#: templates/rest_framework/vertical/select_multiple.html:2
+#: templates/rest_framework_tm/horizontal/select_multiple.html:2
+#: templates/rest_framework_tm/inline/select_multiple.html:2
+#: templates/rest_framework_tm/vertical/select_multiple.html:2
 msgid "No items to select."
 msgstr "Intet at vælge."
 

@@ -10,7 +10,7 @@ Serializer fields handle converting between primitive values and internal dataty
 
 ---
 
-**Note:** The serializer fields are declared in `fields.py`, but by convention you should import them using `from rest_framework import serializers` and refer to fields as `serializers.<FieldName>`.
+**Note:** The serializer fields are declared in `fields.py`, but by convention you should import them using `from rest_framework_tm import serializers` and refer to fields as `serializers.<FieldName>`.
 
 ---
 
@@ -514,7 +514,7 @@ The serializer method referred to by the `method_name` argument should accept a 
 
     from django.contrib.auth.models import User
     from django.utils.timezone import now
-    from rest_framework import serializers
+    from rest_framework_tm import serializers
 
     class UserSerializer(serializers.ModelSerializer):
         days_since_joined = serializers.SerializerMethodField()

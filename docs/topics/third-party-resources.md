@@ -284,7 +284,7 @@ To submit new content, [open an issue][drf-create-issue] or [create a pull reque
 [pypi-register]: https://pypi.python.org/pypi?%3Aaction=register_form
 [semver]: http://semver.org/
 [tox-docs]: https://tox.readthedocs.org/en/latest/
-[drf-compat]: https://github.com/tomchristie/django-rest-framework/blob/master/rest_framework/compat.py
+[drf-compat]: https://github.com/tomchristie/django-rest-framework/blob/master/rest_framework_tm/compat.py
 [rest-framework-grid]: https://www.djangopackages.com/grids/g/django-rest-framework/
 [drf-create-pr]: https://github.com/tomchristie/django-rest-framework/compare
 [drf-create-issue]: https://github.com/tomchristie/django-rest-framework/issues/new

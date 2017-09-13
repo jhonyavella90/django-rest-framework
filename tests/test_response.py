@@ -4,13 +4,13 @@ from django.conf.urls import include, url
 from django.test import TestCase
 from django.utils import six
 
-from rest_framework import generics, routers, serializers, status, viewsets
-from rest_framework.renderers import (
+from rest_framework_tm import generics, routers, serializers, status, viewsets
+from rest_framework_tm.renderers import (
     BaseRenderer, BrowsableAPIRenderer, JSONRenderer
 )
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.views import APIView
+from rest_framework_tm.response import Response
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.views import APIView
 from tests.models import BasicModel
 
 
@@ -117,7 +117,7 @@ urlpatterns = [
     url(r'^html1$', HTMLView1.as_view()),
     url(r'^html_new_model$', HTMLNewModelView.as_view()),
     url(r'^html_new_model_viewset', include(new_model_viewset_router.urls)),
-    url(r'^restframework', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^restframework', include('rest_framework_tm.urls', namespace='rest_framework_tm'))
 ]
 
 

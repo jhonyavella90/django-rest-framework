@@ -13,7 +13,7 @@ from django.utils import six, timezone
 from django.utils.encoding import force_text
 from django.utils.functional import Promise
 
-from rest_framework.compat import total_seconds
+from rest_framework_tm.compat import total_seconds
 
 
 class JSONEncoder(json.JSONEncoder):

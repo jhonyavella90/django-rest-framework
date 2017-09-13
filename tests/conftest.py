@@ -28,8 +28,8 @@ def pytest_configure():
             'django.contrib.sites',
             'django.contrib.staticfiles',
 
-            'rest_framework',
-            'rest_framework.authtoken',
+            'rest_framework_tm',
+            'rest_framework_tm.authtoken',
             'tests',
         ),
         PASSWORD_HASHERS=(

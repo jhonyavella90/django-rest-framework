@@ -12,7 +12,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.db import models
 from django.utils import six
 
-from rest_framework.compat import OrderedDict
+from rest_framework_tm.compat import OrderedDict
 
 FieldInfo = namedtuple('FieldResult', [
     'pk',  # Model field instance

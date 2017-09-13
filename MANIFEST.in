@@ -1,6 +1,6 @@
 include README.md
 include LICENSE.md
-recursive-include rest_framework/static *.js *.css *.png *.eot *.svg *.ttf *.woff
-recursive-include rest_framework/templates *.html
+recursive-include rest_framework_tm/static *.js *.css *.png *.eot *.svg *.ttf *.woff
+recursive-include rest_framework_tm/templates *.html
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]

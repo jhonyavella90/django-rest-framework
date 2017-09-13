@@ -4,7 +4,7 @@ import collections
 
 from django.utils.encoding import force_text
 
-from rest_framework.compat import OrderedDict, unicode_to_repr
+from rest_framework_tm.compat import OrderedDict, unicode_to_repr
 
 
 class ReturnDict(OrderedDict):

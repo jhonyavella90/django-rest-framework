@@ -13,12 +13,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 
-from rest_framework import exceptions, status
-from rest_framework.compat import set_rollback
-from rest_framework.request import Request
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.utils import formatting
+from rest_framework_tm import exceptions, status
+from rest_framework_tm.compat import set_rollback
+from rest_framework_tm.request import Request
+from rest_framework_tm.response import Response
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.utils import formatting
 
 
 def get_view_name(view_cls, suffix=None):

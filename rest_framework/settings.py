@@ -1,15 +1,15 @@
 """
-Settings for REST framework are all namespaced in the REST_FRAMEWORK setting.
+Settings for REST framework are all namespaced in the REST_FRAMEWORK_TM setting.
 For example your project's `settings.py` file might look like this:
 
-REST_FRAMEWORK = {
+REST_FRAMEWORK_TM = {
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.TemplateHTMLRenderer',
+        'rest_framework_tm.renderers.JSONRenderer',
+        'rest_framework_tm.renderers.TemplateHTMLRenderer',
     )
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework.parsers.JSONParser',
-        'rest_framework.parsers.TemplateHTMLRenderer',
+        'rest_framework_tm.parsers.JSONParser',
+        'rest_framework_tm.parsers.TemplateHTMLRenderer',
     )
 }
 
@@ -23,36 +23,36 @@ from django.conf import settings
 from django.test.signals import setting_changed
 from django.utils import six
 
-from rest_framework import ISO_8601
-from rest_framework.compat import importlib
+from rest_framework_tm import ISO_8601
+from rest_framework_tm.compat import importlib
 
-USER_SETTINGS = getattr(settings, 'REST_FRAMEWORK', None)
+USER_SETTINGS = getattr(settings, 'REST_FRAMEWORK_TM', None)
 
 DEFAULTS = {
     # Base API policies
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_tm.renderers.JSONRenderer',
+        'rest_framework_tm.renderers.BrowsableAPIRenderer',
     ),
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework.parsers.JSONParser',
-        'rest_framework.parsers.FormParser',
-        'rest_framework.parsers.MultiPartParser'
+        'rest_framework_tm.parsers.JSONParser',
+        'rest_framework_tm.parsers.FormParser',
+        'rest_framework_tm.parsers.MultiPartParser'
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        'rest_framework_tm.authentication.SessionAuthentication',
+        'rest_framework_tm.authentication.BasicAuthentication'
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+        'rest_framework_tm.permissions.AllowAny',
     ),
     'DEFAULT_THROTTLE_CLASSES': (),
-    'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'rest_framework.negotiation.DefaultContentNegotiation',
-    'DEFAULT_METADATA_CLASS': 'rest_framework.metadata.SimpleMetadata',
+    'DEFAULT_CONTENT_NEGOTIATION_CLASS': 'rest_framework_tm.negotiation.DefaultContentNegotiation',
+    'DEFAULT_METADATA_CLASS': 'rest_framework_tm.metadata.SimpleMetadata',
     'DEFAULT_VERSIONING_CLASS': None,
 
     # Generic view behavior
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework_tm.pagination.PageNumberPagination',
     'DEFAULT_FILTER_BACKENDS': (),
 
     # Throttling
@@ -79,17 +79,17 @@ DEFAULTS = {
     'UNAUTHENTICATED_TOKEN': None,
 
     # View configuration
-    'VIEW_NAME_FUNCTION': 'rest_framework.views.get_view_name',
-    'VIEW_DESCRIPTION_FUNCTION': 'rest_framework.views.get_view_description',
+    'VIEW_NAME_FUNCTION': 'rest_framework_tm.views.get_view_name',
+    'VIEW_DESCRIPTION_FUNCTION': 'rest_framework_tm.views.get_view_description',
 
     # Exception handling
-    'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
+    'EXCEPTION_HANDLER': 'rest_framework_tm.views.exception_handler',
     'NON_FIELD_ERRORS_KEY': 'non_field_errors',
 
     # Testing
     'TEST_REQUEST_RENDERER_CLASSES': (
-        'rest_framework.renderers.MultiPartRenderer',
-        'rest_framework.renderers.JSONRenderer'
+        'rest_framework_tm.renderers.MultiPartRenderer',
+        'rest_framework_tm.renderers.JSONRenderer'
     ),
     'TEST_REQUEST_DEFAULT_FORMAT': 'multipart',
 
@@ -181,7 +181,7 @@ class APISettings(object):
     A settings object, that allows API settings to be accessed as properties.
     For example:
 
-        from rest_framework.settings import api_settings
+        from rest_framework_tm.settings import api_settings
         print(api_settings.DEFAULT_RENDERER_CLASSES)
 
     Any setting with string import paths will be automatically resolved
@@ -218,7 +218,7 @@ api_settings = APISettings(USER_SETTINGS, DEFAULTS, IMPORT_STRINGS)
 def reload_api_settings(*args, **kwargs):
     global api_settings
     setting, value = kwargs['setting'], kwargs['value']
-    if setting == 'REST_FRAMEWORK':
+    if setting == 'REST_FRAMEWORK_TM':
         api_settings = APISettings(value, DEFAULTS, IMPORT_STRINGS)
 
 

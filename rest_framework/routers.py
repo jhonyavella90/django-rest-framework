@@ -22,11 +22,11 @@ from django.conf.urls import url
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import NoReverseMatch
 
-from rest_framework import views
-from rest_framework.compat import OrderedDict
-from rest_framework.response import Response
-from rest_framework.reverse import reverse
-from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework_tm import views
+from rest_framework_tm.compat import OrderedDict
+from rest_framework_tm.response import Response
+from rest_framework_tm.reverse import reverse
+from rest_framework_tm.urlpatterns import format_suffix_patterns
 
 Route = namedtuple('Route', ['url', 'mapping', 'name', 'initkwargs'])
 DynamicDetailRoute = namedtuple('DynamicDetailRoute', ['url', 'name', 'initkwargs'])
@@ -213,7 +213,7 @@ class SimpleRouter(BaseRouter):
         Given a viewset, return the portion of URL regex that is used
         to match against a single instance.
 
-        Note that lookup_prefix is not used directly inside REST rest_framework
+        Note that lookup_prefix is not used directly inside REST rest_framework_tm
         itself, but is required in order to nicely support nested router
         implementations, such as drf-nested-routers.
 

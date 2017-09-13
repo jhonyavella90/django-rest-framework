@@ -3,10 +3,10 @@ from __future__ import unicode_literals
 
 from django.test import TestCase
 
-from rest_framework.templatetags.rest_framework import (
+from rest_framework_tm.templatetags.rest_framework_tm import (
     add_query_param, urlize_quoted_links
 )
-from rest_framework.test import APIRequestFactory
+from rest_framework_tm.test import APIRequestFactory
 
 factory = APIRequestFactory()
 

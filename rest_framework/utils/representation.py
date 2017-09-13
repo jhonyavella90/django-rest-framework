@@ -10,7 +10,7 @@ from django.db import models
 from django.utils.encoding import force_text
 from django.utils.functional import Promise
 
-from rest_framework.compat import unicode_repr
+from rest_framework_tm.compat import unicode_repr
 
 
 def manager_repr(value):

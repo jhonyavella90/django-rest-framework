@@ -28,18 +28,18 @@ As an example, if you are sending `json` encoded data using jQuery with the [.aj
 
 The default set of parsers may be set globally, using the `DEFAULT_PARSER_CLASSES` setting. For example, the following settings would allow only requests with `JSON` content, instead of the default of JSON or form data.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework.parsers.JSONParser',
+            'rest_framework_tm.parsers.JSONParser',
         )
     }
 
 You can also set the parsers used for an individual view, or viewset,
 using the `APIView` class based views.
 
-    from rest_framework.parsers import JSONParser
-    from rest_framework.response import Response
-    from rest_framework.views import APIView
+    from rest_framework_tm.parsers import JSONParser
+    from rest_framework_tm.response import Response
+    from rest_framework_tm.views import APIView
 
     class ExampleView(APIView):
         """
@@ -173,12 +173,12 @@ Install using pip.
 
 Modify your REST framework settings.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_yaml.parsers.YAMLParser',
+            'rest_framework_tm_yaml.parsers.YAMLParser',
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_yaml.renderers.YAMLRenderer',
+            'rest_framework_tm_yaml.renderers.YAMLRenderer',
         ),
     }
 
@@ -194,12 +194,12 @@ Install using pip.
 
 Modify your REST framework settings.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_xml.parsers.XMLParser',
+            'rest_framework_tm_xml.parsers.XMLParser',
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_xml.renderers.XMLRenderer',
+            'rest_framework_tm_xml.renderers.XMLRenderer',
         ),
     }
 

@@ -12,15 +12,15 @@ from django.test import TestCase
 from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework import permissions, serializers, status
-from rest_framework.compat import OrderedDict
-from rest_framework.renderers import (
+from rest_framework_tm import permissions, serializers, status
+from rest_framework_tm.compat import OrderedDict
+from rest_framework_tm.renderers import (
     BaseRenderer, BrowsableAPIRenderer, HTMLFormRenderer, JSONRenderer
 )
-from rest_framework.response import Response
-from rest_framework.settings import api_settings
-from rest_framework.test import APIRequestFactory
-from rest_framework.views import APIView
+from rest_framework_tm.response import Response
+from rest_framework_tm.settings import api_settings
+from rest_framework_tm.test import APIRequestFactory
+from rest_framework_tm.views import APIView
 
 DUMMYSTATUS = status.HTTP_200_OK
 DUMMYCONTENT = 'dummycontent'
@@ -112,7 +112,7 @@ urlpatterns = [
     url(r'^html$', HTMLView.as_view()),
     url(r'^html1$', HTMLView1.as_view()),
     url(r'^empty$', EmptyGETView.as_view()),
-    url(r'^api', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api', include('rest_framework_tm.urls', namespace='rest_framework_tm'))
 ]
 
 

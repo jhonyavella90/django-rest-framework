@@ -3,12 +3,12 @@ from __future__ import unicode_literals
 
 import pytest
 
-from rest_framework import (
+from rest_framework_tm import (
     exceptions, filters, generics, pagination, serializers, status
 )
-from rest_framework.pagination import PAGE_BREAK, PageLink
-from rest_framework.request import Request
-from rest_framework.test import APIRequestFactory
+from rest_framework_tm.pagination import PAGE_BREAK, PageLink
+from rest_framework_tm.request import Request
+from rest_framework_tm.test import APIRequestFactory
 
 factory = APIRequestFactory()
 

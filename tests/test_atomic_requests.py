@@ -7,11 +7,11 @@ from django.test import TestCase, TransactionTestCase
 from django.utils.decorators import method_decorator
 from django.utils.unittest import skipUnless
 
-from rest_framework import status
-from rest_framework.exceptions import APIException
-from rest_framework.response import Response
-from rest_framework.test import APIRequestFactory
-from rest_framework.views import APIView
+from rest_framework_tm import status
+from rest_framework_tm.exceptions import APIException
+from rest_framework_tm.response import Response
+from rest_framework_tm.test import APIRequestFactory
+from rest_framework_tm.views import APIView
 from tests.models import BasicModel
 
 factory = APIRequestFactory()

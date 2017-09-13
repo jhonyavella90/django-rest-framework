@@ -14,7 +14,7 @@ from django.utils import six
 from django.utils.encoding import force_bytes
 from django.utils.http import urlencode
 
-from rest_framework.settings import api_settings
+from rest_framework_tm.settings import api_settings
 
 
 def force_authenticate(request, user=None, token=None):

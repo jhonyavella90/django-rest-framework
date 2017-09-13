@@ -19,9 +19,9 @@ from django.db import models
 from django.test import TestCase
 from django.utils import six
 
-from rest_framework import serializers
-from rest_framework.compat import DurationField as ModelDurationField
-from rest_framework.compat import OrderedDict, unicode_repr
+from rest_framework_tm import serializers
+from rest_framework_tm.compat import DurationField as ModelDurationField
+from rest_framework_tm.compat import OrderedDict, unicode_repr
 
 
 def dedent(blocktext):

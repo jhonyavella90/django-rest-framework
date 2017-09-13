@@ -18,17 +18,17 @@ from django.db.models.fields import FieldDoesNotExist
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework.compat import DurationField as ModelDurationField
-from rest_framework.compat import postgres_fields, unicode_to_repr
-from rest_framework.utils import model_meta
-from rest_framework.utils.field_mapping import (
+from rest_framework_tm.compat import DurationField as ModelDurationField
+from rest_framework_tm.compat import postgres_fields, unicode_to_repr
+from rest_framework_tm.utils import model_meta
+from rest_framework_tm.utils.field_mapping import (
     ClassLookupDict, get_field_kwargs, get_nested_relation_kwargs,
     get_relation_kwargs, get_url_kwargs
 )
-from rest_framework.utils.serializer_helpers import (
+from rest_framework_tm.utils.serializer_helpers import (
     BindingDict, BoundField, NestedBoundField, ReturnDict, ReturnList
 )
-from rest_framework.validators import (
+from rest_framework_tm.validators import (
     UniqueForDateValidator, UniqueForMonthValidator, UniqueForYearValidator,
     UniqueTogetherValidator
 )
@@ -40,8 +40,8 @@ from rest_framework.validators import (
 # This helps keep the separation between model fields, form fields, and
 # serializer fields more explicit.
 
-from rest_framework.fields import *  # NOQA # isort:skip
-from rest_framework.relations import *  # NOQA # isort:skip
+from rest_framework_tm.fields import *  # NOQA # isort:skip
+from rest_framework_tm.relations import *  # NOQA # isort:skip
 
 # We assume that 'validators' are intended for the child serializer,
 # rather than the parent serializer.

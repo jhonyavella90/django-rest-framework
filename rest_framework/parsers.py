@@ -20,8 +20,8 @@ from django.utils import six
 from django.utils.encoding import force_text
 from django.utils.six.moves.urllib import parse as urlparse
 
-from rest_framework import renderers
-from rest_framework.exceptions import ParseError
+from rest_framework_tm import renderers
+from rest_framework_tm.exceptions import ParseError
 
 
 class DataAndFiles(object):

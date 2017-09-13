@@ -20,10 +20,10 @@ For more information see the documentation on [content negotiation][conneg].
 
 The default set of renderers may be set globally, using the `DEFAULT_RENDERER_CLASSES` setting.  For example, the following settings would use `JSON` as the main media type and also include the self describing API.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework.renderers.JSONRenderer',
-            'rest_framework.renderers.BrowsableAPIRenderer',
+            'rest_framework_tm.renderers.JSONRenderer',
+            'rest_framework_tm.renderers.BrowsableAPIRenderer',
         )
     }
 
@@ -31,9 +31,9 @@ You can also set the renderers used for an individual view, or viewset,
 using the `APIView` class based views.
 
     from django.contrib.auth.models import User
-    from rest_framework.renderers import JSONRenderer
-    from rest_framework.response import Response
-    from rest_framework.views import APIView
+    from rest_framework_tm.renderers import JSONRenderer
+    from rest_framework_tm.response import Response
+    from rest_framework_tm.views import APIView
 
     class UserCountView(APIView):
         """
@@ -167,7 +167,7 @@ This renderer will determine which other renderer would have been given highest 
 
 **.charset**: `utf-8`
 
-**.template**: `'rest_framework/api.html'`
+**.template**: `'rest_framework_tm/api.html'`
 
 #### Customizing BrowsableAPIRenderer
 
@@ -193,7 +193,7 @@ Note that views that have nested or list serializers for their input won't work 
 
 **.charset**: `utf-8`
 
-**.template**: `'rest_framework/admin.html'`
+**.template**: `'rest_framework_tm/admin.html'`
 
 ## HTMLFormRenderer
 
@@ -207,7 +207,7 @@ Renders data returned by a serializer into an HTML form.  The output of this ren
 
 **.charset**: `utf-8`
 
-**.template**: `'rest_framework/form.html'`
+**.template**: `'rest_framework_tm/form.html'`
 
 ## MultiPartRenderer
 
@@ -250,7 +250,7 @@ By default this will include the following keys: `view`, `request`, `response`, 
 The following is an example plaintext renderer that will return a response with the `data` parameter as the content of the response.
 
     from django.utils.encoding import smart_unicode
-    from rest_framework import renderers
+    from rest_framework_tm import renderers
 
 
     class PlainTextRenderer(renderers.BaseRenderer):
@@ -376,12 +376,12 @@ Install using pip.
 
 Modify your REST framework settings.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_yaml.parsers.YAMLParser',
+            'rest_framework_tm_yaml.parsers.YAMLParser',
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_yaml.renderers.YAMLRenderer',
+            'rest_framework_tm_yaml.renderers.YAMLRenderer',
         ),
     }
 
@@ -397,12 +397,12 @@ Install using pip.
 
 Modify your REST framework settings.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_xml.parsers.XMLParser',
+            'rest_framework_tm_xml.parsers.XMLParser',
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_xml.renderers.XMLRenderer',
+            'rest_framework_tm_xml.renderers.XMLRenderer',
         ),
     }
 
@@ -426,9 +426,9 @@ Install using pip.
 
 Modify your REST framework settings.
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_TM = {
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_jsonp.renderers.JSONPRenderer',
+            'rest_framework_tm_jsonp.renderers.JSONPRenderer',
         ),
     }
 

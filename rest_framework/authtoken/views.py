@@ -1,8 +1,8 @@
-from rest_framework import parsers, renderers
-from rest_framework.authtoken.models import Token
-from rest_framework.authtoken.serializers import AuthTokenSerializer
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework_tm import parsers, renderers
+from rest_framework_tm.authtoken.models import Token
+from rest_framework_tm.authtoken.serializers import AuthTokenSerializer
+from rest_framework_tm.response import Response
+from rest_framework_tm.views import APIView
 
 
 class ObtainAuthToken(APIView):

@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load rest_framework %}
+{% load rest_framework_tm %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,11 +14,11 @@
 
             {% block style %}
                 {% block bootstrap_theme %}
-                    <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap.min.css" %}"/>
-                    <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/bootstrap-tweaks.css" %}"/>
+                    <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/bootstrap.min.css" %}"/>
+                    <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/bootstrap-tweaks.css" %}"/>
                 {% endblock %}
-                <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/prettify.css" %}"/>
-                <link rel="stylesheet" type="text/css" href="{% static "rest_framework/css/default.css" %}"/>
+                <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/prettify.css" %}"/>
+                <link rel="stylesheet" type="text/css" href="{% static "rest_framework_tm/css/default.css" %}"/>
             {% endblock %}
 
         {% endblock %}
@@ -131,9 +131,9 @@
 
                     <div class="request-info" style="clear: both" >
                         {% if style == 'list' %}
-                            {% include "rest_framework/admin/list.html" %}
+                            {% include "rest_framework_tm/admin/list.html" %}
                         {% else %}
-                            {% include "rest_framework/admin/detail.html" %}
+                            {% include "rest_framework_tm/admin/detail.html" %}
                         {% endif %}
                     </div>
 
@@ -221,10 +221,10 @@
 {% endif %}
 
         {% block script %}
-            <script src="{% static "rest_framework/js/jquery-1.8.1-min.js" %}"></script>
-            <script src="{% static "rest_framework/js/bootstrap.min.js" %}"></script>
-            <script src="{% static "rest_framework/js/prettify-min.js" %}"></script>
-            <script src="{% static "rest_framework/js/default.js" %}"></script>
+            <script src="{% static "rest_framework_tm/js/jquery-1.8.1-min.js" %}"></script>
+            <script src="{% static "rest_framework_tm/js/bootstrap.min.js" %}"></script>
+            <script src="{% static "rest_framework_tm/js/prettify-min.js" %}"></script>
+            <script src="{% static "rest_framework_tm/js/default.js" %}"></script>
         {% endblock %}
     </body>
     {% endblock %}

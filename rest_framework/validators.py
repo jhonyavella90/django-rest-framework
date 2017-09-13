@@ -10,9 +10,9 @@ from __future__ import unicode_literals
 
 from django.utils.translation import ugettext_lazy as _
 
-from rest_framework.compat import unicode_to_repr
-from rest_framework.exceptions import ValidationError
-from rest_framework.utils.representation import smart_repr
+from rest_framework_tm.compat import unicode_to_repr
+from rest_framework_tm.exceptions import ValidationError
+from rest_framework_tm.utils.representation import smart_repr
 
 
 class UniqueValidator(object):
